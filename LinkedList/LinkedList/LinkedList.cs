@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LinkedListProb;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,22 @@ namespace LinkedListProb
             }
             Console.WriteLine("{0} inserted into Linked List", node.data);
         }
+
+        public void LinkedListReverseOrder(int data)
+        {
+            Node newNode = new Node(data);
+            if (this.head == null)
+            {
+                this.head = newNode;
+            }
+            else
+            {
+                Node temp = this.head;
+                head = newNode;
+                head.next = temp;
+            }
+        }
+
         internal void Display()
         {
             Node temp = head;

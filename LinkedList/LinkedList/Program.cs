@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LinkedListProb;
+using System;
+using System.Collections.Generic;
 
 namespace LinkedListProb
 {
@@ -6,12 +8,36 @@ namespace LinkedListProb
     {
         static void Main(string[] args) 
         {
-            Console.WriteLine("Welcome to Linked List operations");
-            LinkedLists list = new LinkedLists();
-            list.Add(56);                                   // adding root node
-            list.Add(30);                                   // adding left node
-            list.Add(70);                                   // adding right node
-            list.Display();
+            LinkedLists linkedLists = new LinkedLists();
+            bool flag = true;
+            while(flag)
+            {
+                Console.WriteLine("Linked List problems ");
+                Console.WriteLine("1.CreateLinkedList\n" +
+                                  "2.LinkedListReverseOrder" + "\n" +
+                                  "3.Exit" + "\n");
+                Console.WriteLine("Select to perform operation");
+                int option = Convert.ToInt32(Console.ReadLine());
+                switch(option)
+                {
+                    case 1:
+                        linkedLists.Add(56);                                   // adding root node
+                        linkedLists.Add(30);                                   // adding left node
+                        linkedLists.Add(70);                                   // adding right node
+                        linkedLists.Display();
+                        break;
+                    case 2:
+                        linkedLists.LinkedListReverseOrder(70);
+                        linkedLists.LinkedListReverseOrder(30);
+                        linkedLists.LinkedListReverseOrder(56);
+                        linkedLists.Display();
+                        break;
+                    case 3:
+                        flag= false;
+                        break;
+                }
+
+            }           
         }
     }
-}
+}       
