@@ -73,6 +73,15 @@ namespace LinkedListProb
             return this.head;
         }
 
+        public void RemoveFirstNode()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("LinkedList is empty");
+            }
+            this.head = head.next;
+            Console.WriteLine("First element is deleted successfully");
+        }
         internal void Display()
         {
             Node temp = head;
