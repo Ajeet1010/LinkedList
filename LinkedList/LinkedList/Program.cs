@@ -14,8 +14,9 @@ namespace LinkedListProb
             {
                 Console.WriteLine("Linked List problems ");
                 Console.WriteLine("1.CreateLinkedList\n" +
-                                  "2.LinkedListReverseOrder" + "\n" +
-                                  "3.Exit" + "\n");
+                                  "2.LinkedListReverseOrder\n" +
+                                  "3.Create by appending\n" +
+                                  "4. Exit" + "\n");
                 Console.WriteLine("Select to perform operation");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch(option)
@@ -33,11 +34,17 @@ namespace LinkedListProb
                         linkedLists.Display();
                         break;
                     case 3:
-                        flag= false;
+                        linkedLists.Add(56);
+                        linkedLists.Add(70);
+                        linkedLists.InsertAtParticuarPosition(1, 30);
+                        linkedLists.Display();
+                        break;
+
+                    case 4:
+                        flag = false;
                         break;
                 }
-
-            }           
+            }
         }
     }
 }       
