@@ -17,7 +17,8 @@ namespace LinkedListProb
                                   "2.LinkedListReverseOrder\n" +
                                   "3.Create by appending\n" +
                                   "4.Deletion of first node\n" +
-                                  "5.Exit" + "\n");
+                                  "5.Deletion of last node\n" +
+                                  "6.Exit" + "\n");
                 Console.WriteLine("Select to perform operation");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch(option)
@@ -28,12 +29,14 @@ namespace LinkedListProb
                         linkedLists.Add(70);                                   // adding right node
                         linkedLists.Display();
                         break;
+
                     case 2:
                         linkedLists.LinkedListReverseOrder(70);
                         linkedLists.LinkedListReverseOrder(30);
                         linkedLists.LinkedListReverseOrder(56);
                         linkedLists.Display();
                         break;
+
                     case 3:
                         linkedLists.Add(56);
                         linkedLists.Add(70);
@@ -50,6 +53,14 @@ namespace LinkedListProb
                         break;
 
                     case 5:
+                        linkedLists.Add(56);
+                        linkedLists.Add(30);
+                        linkedLists.Add(70);
+                        linkedLists.RemoveLastNode();
+                        linkedLists.Display();
+                        break;
+
+                    case 6:
                         flag = false;
                         break;
                 }
