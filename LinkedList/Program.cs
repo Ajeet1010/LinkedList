@@ -6,12 +6,12 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("*****   Linked List Problems  *****");
-            LinkedList list = new LinkedList();
-            list.Add(56);                                   // adding root node
-            list.Add(30);                                   // adding left node
-            list.Add(70);                                   // adding right node
-            list.Display();                                 // displaying the insertion.
+            Console.WriteLine("*****   Linked List Problems  *****"); 
+            LinkedList linkedList = new LinkedList();
+            linkedList.LinkedListReverseOrder(70);
+            linkedList.LinkedListReverseOrder(30);
+            linkedList.LinkedListReverseOrder(56);
+            linkedList.Display();
         }
     }
 }

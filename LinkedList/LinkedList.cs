@@ -3,30 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace LinkedList
 {
-    // UC1- Creating a Simple linked list.
+    // UC2- Displaying element inserted in reverse order.
     internal class LinkedList
     {
         public Node head;
-        public void Add(int data)
+        public void LinkedListReverseOrder(int data)
         {
-            Node node = new Node(data);
+            Node newNode = new Node(data);
             if (this.head == null)
-            {
-                this.head = node;
-            }
+                this.head = newNode;
             else
             {
-                Node temp = head;
-                while (temp.next != null)
-                {
-                    temp = temp.next;
-                }
-                temp.next = node;
+                Node temp = this.head;
+                head = newNode;
+                head.next = temp;
             }
-            Console.WriteLine("{0} inserted into Linked List", node.data);
+            Console.WriteLine("{0} inserted into Linked List", head.data);
         }
 
         // Displaying the insertion in linked list.
@@ -38,7 +34,7 @@ namespace LinkedList
                 Console.WriteLine("Linked list is empty");
                 return;
             }
-            Console.WriteLine("\nElements in linked list are: ");
+            Console.WriteLine("\nElements in linked list are inserted in reverse order: ");
             while (temp != null)
             {
                 Console.WriteLine(temp.data + " ");
