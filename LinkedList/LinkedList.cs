@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
+    // UC4- Insertion of an element at a IN BETWEEN NODE i.e, 30 between 56 & 70.
     internal class LinkedList
     {
         public Node head;
-
-        // UC1- Creating a Simple linked list.
         public void Add(int data)
         {
             Node node = new Node(data);
@@ -29,24 +28,8 @@ namespace LinkedList
             }
             Console.WriteLine("{0} inserted into Linked List", node.data);
         }
-
-        // UC2- Displaying element inserted in reverse order.
-        public void LinkedListReverseOrder(int data)
-        {
-            Node newNode = new Node(data);
-            if (this.head == null)
-                this.head = newNode;
-            else
-            {
-                Node temp = this.head;
-                head = newNode;
-                head.next = temp;
-            }
-            Console.WriteLine("\n{0} inserted into Linked List", head.data);
-        }
-
-        // UC3- Insertion of an element at a particular place.
-        public Node InsertAtParticuarPosition(int position, int data)
+                
+        public Node InsertInBetween(int position, int data)
         {
             Node newestNode = new Node(data);
             if (this.head == null)
@@ -70,7 +53,7 @@ namespace LinkedList
             }
             newestNode.next = prev.next;
             prev.next = newestNode;
-            Console.WriteLine("\nValue is Successfully Inserted in LinkedList\nAfter updation....");
+            Console.WriteLine("\nValue is Successfully Inserted in between LinkedList\nAfter updation....");
             return this.head;
         }
 
