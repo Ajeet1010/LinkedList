@@ -35,7 +35,8 @@ namespace LinkedList
                 case 4:
                     list.Add(56);
                     list.Add(70);
-                    list.InsertAtParticuarPosition(1, 30);
+                    list.Display();
+                    list.InsertInBetween(1, 30);
                     list.Display();
                     break;
                 default:
