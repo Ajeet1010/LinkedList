@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
+    // UC5- Deletion of first element of node.
     internal class LinkedList
     {
         public Node head;
-
-        // UC1- Creating a Simple linked list.
         public void Add(int data)
         {
             Node node = new Node(data);
@@ -29,81 +28,7 @@ namespace LinkedList
             }
             Console.WriteLine("{0} inserted into Linked List", node.data);
         }
-
-        // UC2- Displaying element inserted in reverse order.
-        public void LinkedListReverseOrder(int data)
-        {
-            Node newNode = new Node(data);
-            if (this.head == null)
-                this.head = newNode;
-            else
-            {
-                Node temp = this.head;
-                head = newNode;
-                head.next = temp;
-            }
-            Console.WriteLine("\n{0} inserted into Linked List", head.data);
-        }
-
-        // UC 3- Insertion of an element at a particular place.
-        public Node InsertAtParticuarPosition(int position, int data)
-        {
-            Node newestNode = new Node(data);
-            if (this.head == null)
-            {
-                return newestNode;
-            }
-            if (position == 0)
-            {
-                newestNode.next = this.head;
-                this.head = newestNode;
-                return this.head;
-            }
-            Node prev = null;
-            Node current = this.head;
-            int count = 0;
-            while (current != null && count < position)
-            {
-                prev = current;
-                current = current.next;
-                count++;
-            }
-            newestNode.next = prev.next;
-            prev.next = newestNode;
-            Console.WriteLine("\nValue is Successfully Inserted in LinkedList\nAfter updation....");
-            return this.head;
-        }
-
-        // UC 4- Insertion of an element in between i.e, 56 & 70.
-        public Node InsertInBetween(int position, int data)
-        {
-            Node newestNode = new Node(data);
-            if (this.head == null)
-            {
-                return newestNode;
-            }
-            if (position == 0)
-            {
-                newestNode.next = this.head;
-                this.head = newestNode;
-                return this.head;
-            }
-            Node prev = null;
-            Node current = this.head;
-            int count = 0;
-            while (current != null && count < position)
-            {
-                prev = current;
-                current = current.next;
-                count++;
-            }
-            newestNode.next = prev.next;
-            prev.next = newestNode;
-            Console.WriteLine("\nValue is Successfully Inserted in LinkedList\nAfter updation....");
-            return this.head;
-        }
-
-        // UC5- Deletion of first element of node.
+                
         public void RemoveFirstNode()
         {
             if (this.head == null)
