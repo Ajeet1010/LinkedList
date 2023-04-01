@@ -103,6 +103,17 @@ namespace LinkedList
             return this.head;
         }
 
+        // UC5- Deletion of first element of node.
+        public void RemoveFirstNode()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("LinkedList is empty");
+            }
+            this.head = head.next;
+            Console.WriteLine("First element is deleted successfully");
+        }
+
         // Displaying the insertion in linked list.
         internal void Display()
         {

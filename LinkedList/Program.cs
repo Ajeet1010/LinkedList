@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime;
 
 namespace LinkedList
 {
@@ -8,7 +9,7 @@ namespace LinkedList
         {
             Console.WriteLine("*****   Linked List Problems  *****");
             Console.Write("1. Insertion of element.\n2. Displaying element in reverse order.\n3. Insertion at a particular position.\n" +
-                "4. Insertion data in between element.\nChoose option to perform:  ");
+                "4. Insertion data in between element.\n5. Deletion of first element of node.\nChoose option to perform:  ");
             int option = Convert.ToInt32(Console.ReadLine());
             Console.Write("Your choice is: " + option + "\n");
             LinkedList list = new LinkedList();
@@ -37,6 +38,15 @@ namespace LinkedList
                     list.Add(70);
                     list.Display();
                     list.InsertInBetween(1, 30);
+                    list.Display();
+                    break;
+                case 5:
+                    list.Add(56);
+                    list.Add(70);
+                    list.Add(36);
+                    list.Add(89);
+                    list.Display();
+                    list.RemoveFirstNode();
                     list.Display();
                     break;
                 default:
