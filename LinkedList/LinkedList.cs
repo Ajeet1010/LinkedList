@@ -45,6 +45,35 @@ namespace LinkedList
             Console.WriteLine("\n{0} inserted into Linked List", head.data);
         }
 
+        // UC3- Insertion of an element at a particular place.
+        public Node InsertAtParticuarPosition(int position, int data)
+        {
+            Node newestNode = new Node(data);
+            if (this.head == null)
+            {
+                return newestNode;
+            }
+            if (position == 0)
+            {
+                newestNode.next = this.head;
+                this.head = newestNode;
+                return this.head;
+            }
+            Node prev = null;
+            Node current = this.head;
+            int count = 0;
+            while (current != null && count < position)
+            {
+                prev = current;
+                current = current.next;
+                count++;
+            }
+            newestNode.next = prev.next;
+            prev.next = newestNode;
+            Console.WriteLine("\nValue is Successfully Inserted in LinkedList\nAfter updation....");
+            return this.head;
+        }
+
         // Displaying the insertion in linked list.
         internal void Display()
         {
