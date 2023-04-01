@@ -8,7 +8,7 @@ namespace LinkedList
         {
             Console.WriteLine("*****   Linked List Problems  *****");
             Console.Write("1. Insertion of element.\n2. Displaying element in reverse order.\n3. Insertion at a particular position.\n" +
-                "\nChoose option to perform:");
+                "4. Insertion data in between element.\nChoose option to perform:  ");
             int option = Convert.ToInt32(Console.ReadLine());
             Console.Write("Your choice is: " + option + "\n");
             LinkedList list = new LinkedList();
@@ -32,6 +32,12 @@ namespace LinkedList
                     list.InsertAtParticuarPosition(0, 70);
                     list.Display();
                     break; 
+                case 4:
+                    list.Add(56);
+                    list.Add(70);
+                    list.InsertAtParticuarPosition(1, 30);
+                    list.Display();
+                    break;
                 default:
                     Console.WriteLine("Choose the correct option");
                     break;

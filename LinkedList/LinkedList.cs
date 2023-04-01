@@ -45,7 +45,7 @@ namespace LinkedList
             Console.WriteLine("\n{0} inserted into Linked List", head.data);
         }
 
-        // UC3- Insertion of an element at a particular place.
+        // UC 3 or 4- Insertion of an element at a particular place.
         public Node InsertAtParticuarPosition(int position, int data)
         {
             Node newestNode = new Node(data);
