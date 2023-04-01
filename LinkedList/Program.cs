@@ -12,6 +12,10 @@ namespace LinkedList
             list.Add(30);                                   // adding left node
             list.Add(70);                                   // adding right node
             list.Display();                                 // displaying the insertion.
+            list.LinkedListReverseOrder(70);
+            list.LinkedListReverseOrder(30);
+            list.LinkedListReverseOrder(56);
+            list.Display();
         }
     }
 }

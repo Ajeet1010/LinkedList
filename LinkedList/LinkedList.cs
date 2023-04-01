@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    // UC1- Creating a Simple linked list.
     internal class LinkedList
     {
         public Node head;
+
+        // UC1- Creating a Simple linked list.
         public void Add(int data)
         {
             Node node = new Node(data);
@@ -27,6 +28,21 @@ namespace LinkedList
                 temp.next = node;
             }
             Console.WriteLine("{0} inserted into Linked List", node.data);
+        }
+
+        // UC2- Displaying element inserted in reverse order.
+        public void LinkedListReverseOrder(int data)
+        {
+            Node newNode = new Node(data);
+            if (this.head == null)
+                this.head = newNode;
+            else
+            {
+                Node temp = this.head;
+                head = newNode;
+                head.next = temp;
+            }
+            Console.WriteLine("\n{0} inserted into Linked List", head.data);
         }
 
         // Displaying the insertion in linked list.
