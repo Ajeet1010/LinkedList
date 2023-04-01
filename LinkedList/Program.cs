@@ -8,14 +8,11 @@ namespace LinkedList
         {
             Console.WriteLine("*****   Linked List Problems  *****");
             LinkedList list = new LinkedList();
-            list.Add(56);                                   // adding root node
-            list.Add(30);                                   // adding left node
-            list.Add(70);                                   // adding right node
-            list.Display();                                 // displaying the insertion.
-            list.LinkedListReverseOrder(70);
-            list.LinkedListReverseOrder(30);
-            list.LinkedListReverseOrder(56);
+            list.Add(56);
+            list.InsertAtParticuarPosition(0, 30);
+            list.InsertAtParticuarPosition(0, 70);
             list.Display();
+
         }
     }
 }

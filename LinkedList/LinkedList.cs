@@ -10,7 +10,7 @@ namespace LinkedList
     {
         public Node head;
 
-        // UC1- Creating a Simple linked list.
+        // UC3- Inserting a element at a particular position.
         public void Add(int data)
         {
             Node node = new Node(data);
@@ -27,24 +27,37 @@ namespace LinkedList
                 }
                 temp.next = node;
             }
-            Console.WriteLine("{0} inserted into Linked List", node.data);
+            Console.WriteLine("{0} is inserted into linked list", node.data);
         }
-
-        // UC2- Displaying element inserted in reverse order.
-        public void LinkedListReverseOrder(int data)
+        
+        public Node InsertAtParticuarPosition(int position, int data)
         {
-            Node newNode = new Node(data);
+            Node newestNode = new Node(data);
             if (this.head == null)
-                this.head = newNode;
-            else
             {
-                Node temp = this.head;
-                head = newNode;
-                head.next = temp;
+                return newestNode;
             }
-            Console.WriteLine("\n{0} inserted into Linked List", head.data);
+            if (position == 0)
+            {
+                newestNode.next = this.head;
+                this.head = newestNode;
+                return this.head;
+            }
+            Node prev = null;
+            Node current = this.head;
+            int count = 0;
+            while (current != null && count < position)
+            {
+                prev = current;
+                current = current.next;
+                count++;
+            }
+            newestNode.next = prev.next;
+            prev.next = newestNode;
+            Console.WriteLine("\nValue is Successfully Inserted in LinkedList\nAfter updation....");
+            return this.head;
         }
-
+                
         // Displaying the insertion in linked list.
         internal void Display()
         {
