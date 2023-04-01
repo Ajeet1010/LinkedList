@@ -14,7 +14,7 @@ namespace LinkedList
             list.Add(36);
             list.Add(89);
             list.Display();
-            list.RemoveFirstNode();
+            list.RemoveLastNode();
             list.Display();
         }
     }

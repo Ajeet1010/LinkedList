@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    // UC5- Deletion of first element of node.
+    // UC6- Deletion of last element of node.
     internal class LinkedList
     {
         public Node head;
@@ -28,15 +28,24 @@ namespace LinkedList
             }
             Console.WriteLine("{0} inserted into Linked List", node.data);
         }
-                
-        public void RemoveFirstNode()
+
+        public void RemoveLastNode()
         {
             if (this.head == null)
             {
                 Console.WriteLine("LinkedList is empty");
             }
-            this.head = head.next;
-            Console.WriteLine("First element is deleted successfully");
+            if (head.next == null)
+            {
+                head = null;
+            }
+            Node lastNode = this.head;
+            while (lastNode.next.next != null)
+            {
+                lastNode = lastNode.next;
+            }
+            lastNode.next = null;
+            Console.WriteLine("Last element is deleted successfully");
         }
 
         // Displaying the insertion in linked list.
